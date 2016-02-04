@@ -1,22 +1,29 @@
 $(document).ready(function() {
 
+// loader fade
+    //setTimeout(function() {
+    //    $('.loader').fadeOut();
+    //}, 1000);
+
+
+
     var $context = $('.slider'),
         itemContainer = $context.find('.slider-item-container'),
         items = $context.find('.item'),
         maxWidthItem = 0;
 
+// add items container width, general width all items
         items.each(function(){
             maxWidthItem += $(this).outerWidth();
         });
         itemContainer.width(maxWidthItem);
 
 
-
     $('.arrow-naw.right').click(function() {
         var activeItem = $context.find('.item.active'),
             next = activeItem.next();
-
-        //console.log(currentIndexItem );
+        var activeItemIndex = activeItem.index();
+        console.log(activeItemIndex);
 
         //var moveItemRight = moveItem;
         //moveItemRight();
@@ -58,6 +65,29 @@ $(document).ready(function() {
 
     $('.btn').click(function() {
         $('.div').slideToggle();
+        if ($(this).html() === 'show it') {
+            $(this).html('hide it');
+        } else {
+            $(this).html('show it');
+        }
     });
+
+
+
+    var myString = "Place your string data here, and as much as you like.";
+    var myArray = myString.split("");
+    var loopTimer;
+    function frameLooper() {
+        if(myArray.length > 0) {
+            document.querySelector(".demo-text").innerHTML += myArray.shift();
+        } else {
+            clearTimeout(loopTimer);
+            return false;
+        }
+        loopTimer = setTimeout('frameLooper()',70);
+    }
+    frameLooper();
+
+
 
 });
