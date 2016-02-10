@@ -30,13 +30,13 @@ $(document).ready(function() {
 
 
 
-        //function moveItem() {
-        //    var activeItemWidth = activeItem.outerWidth();
-        //    itemContainer.css({
-        //        'transform': 'translateX(' + -activeItemWidth + 'px)'
-        //    });
-        //}
-        //moveItem();
+        function moveItem() {
+            var activeItemWidth = activeItem.outerWidth();
+            itemContainer.css({
+                'transform': 'translateX(' + -activeItemWidth + 'px)'
+            });
+        }
+        moveItem();
 
         activeItem.removeClass('active');
         next.addClass('active');
@@ -55,12 +55,12 @@ $(document).ready(function() {
         }
     });
 
-    function moveItem() {
-        var activeItemWidth = activeItem.outerWidth();
-        itemContainer.css({
-            'transform': 'translateY(' + activeItemWidth + 'px)'
-        });
-    }
+    //function moveItem() {
+    //    var activeItemWidth = activeItem.outerWidth();
+    //    itemContainer.css({
+    //        'transform': 'translateY(' + activeItemWidth + 'px)'
+    //    });
+    //}
 
 
     $('.btn').click(function() {
@@ -74,19 +74,19 @@ $(document).ready(function() {
 
 
 
-    var myString = "Place your string data here, and as much as you like.";
-    var myArray = myString.split("");
-    var loopTimer;
-    function frameLooper() {
-        if(myArray.length > 0) {
-            document.querySelector(".demo-text").innerHTML += myArray.shift();
-        } else {
-            clearTimeout(loopTimer);
-            return false;
-        }
-        loopTimer = setTimeout('frameLooper()',70);
-    }
-    frameLooper();
+    //var myString = "Place your string data here, and as much as you like.";
+    //var myArray = myString.split("");
+    //var loopTimer;
+    //function frameLooper() {
+    //    if(myArray.length > 0) {
+    //        document.querySelector(".demo-text").innerHTML += myArray.shift();
+    //    } else {
+    //        clearTimeout(loopTimer);
+    //        return false;
+    //    }
+    //    loopTimer = setTimeout('frameLooper()',70);
+    //}
+    //frameLooper();
 
 
 
